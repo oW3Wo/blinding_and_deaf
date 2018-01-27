@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabFollower : MonoBehaviour
 {
-    public GameObject player1, player2;
+    private GameObject player1, player2;
     private bool grab1 = false, grab2 = false, enc = false;
 
     private Vector3 startMarker, endMarker;
@@ -16,8 +16,8 @@ public class GrabFollower : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //player1 = FindObjectsOfType<PlayerControl>()[1].gameObject;
-        //player2 = FindObjectsOfType<PlayerControl>()[0].gameObject;
+        player1 = GameObject.FindGameObjectWithTag("Player1");
+        player2 = GameObject.FindGameObjectWithTag("Player2");
         this.GetComponent<FollowerProperties>().belong = Static.Belong.none;
     }
 

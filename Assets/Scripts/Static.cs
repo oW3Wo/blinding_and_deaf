@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Static {
+ 
+public static class Static {
+
+    public struct BuildingPos
+    {
+        float bottomleft;
+        float topright;
+    }
 
     public enum BuildBl { player1,player2,none};
     public enum Belong { player1, player2, none };
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public static BuildingPos b1, b2, b3, b4, b5, b6;
 }
