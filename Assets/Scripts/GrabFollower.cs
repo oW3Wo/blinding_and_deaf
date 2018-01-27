@@ -18,7 +18,7 @@ public class GrabFollower : MonoBehaviour
     {
         //player1 = FindObjectsOfType<PlayerControl>()[1].gameObject;
         //player2 = FindObjectsOfType<PlayerControl>()[0].gameObject;
-        this.GetComponent<FollowerProperties>().belong = FollowerProperties.Belong.none;
+        this.GetComponent<FollowerProperties>().belong = Static.Belong.none;
     }
 
     // Update is called once per frame
@@ -29,13 +29,13 @@ public class GrabFollower : MonoBehaviour
         {
             Grab1(player1.transform.position);
             player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
-            this.GetComponent<FollowerProperties>().belong = FollowerProperties.Belong.player1;
+            this.GetComponent<FollowerProperties>().belong = Static.Belong.player1;
         }
 
         if (grab2)
         {
             Grab2(player2.transform.position);
-            this.GetComponent<FollowerProperties>().belong = FollowerProperties.Belong.player2;
+            this.GetComponent<FollowerProperties>().belong = Static.Belong.player2;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !grab2)
@@ -72,7 +72,7 @@ public class GrabFollower : MonoBehaviour
         {
             this.transform.SetParent(player1.transform);
             startMarker = this.transform.position;
-            endMarker = end + new Vector3(Random.Range(0.2f, 0.4f), this.transform.position.y, Random.Range(0.2f, 0.4f));
+            endMarker = end + new Vector3(Random.Range(-0.4f, 0.4f), this.transform.position.y, Random.Range(-0.4f, 0.4f));
             startTime = Time.time;
             journeyLength = Vector3.Distance(startMarker, endMarker);
             enc = true;
@@ -89,7 +89,7 @@ public class GrabFollower : MonoBehaviour
         {
             this.transform.SetParent(player2.transform);
             startMarker = this.transform.position;
-            endMarker = end + new Vector3(Random.Range(0.2f, 0.4f), this.transform.position.y, Random.Range(0.2f, 0.4f));
+            endMarker = end + new Vector3(Random.Range(-0.4f, 0.4f), this.transform.position.y, Random.Range(-0.4f, 0.4f));
             journeyLength = Vector3.Distance(startMarker, endMarker);
             startTime = Time.time;
             enc = true;

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowerProperties : MonoBehaviour {
+public class Static {
 
-
-    public Static.Belong belong;
-
+    public enum BuildBl { player1,player2,none};
+    public enum Belong { player1, player2, none };
     // Use this for initialization
     void Start () {
 		
@@ -16,6 +15,4 @@ public class FollowerProperties : MonoBehaviour {
 	void Update () {
 		
 	}
-
-
 }

@@ -27,8 +27,13 @@ public class FollowersSpawn : MonoBehaviour {
         }
 	}
 
-    void randomPos()
+    void RandomPos()
     {
         //this.transform.position=new Vector3(Random.Range(xmin,xmax),0,Random.r)
+    }
+
+    bool ValidPos()
+    {
+        return true;
     }
 }

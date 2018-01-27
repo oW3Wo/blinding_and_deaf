@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BuildingFollowers : MonoBehaviour {
 
-    private int followerQuan;
+    public int followerQuan;
+    public Static.BuildBl build = Static.BuildBl.none;
 
     private void Start()
     {
-        followerQuan = 10;
+        followerQuan = 1;
     }
 }
