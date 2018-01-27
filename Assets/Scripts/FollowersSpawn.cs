@@ -8,11 +8,11 @@ public class FollowersSpawn : MonoBehaviour {
     public GameObject prefabs;
     private float xmax = 4.8f, xmin = -4.8f, zmax = 6.8f, zmin = -7.0f;
     private Static.BuildingPos invaPos;
-    private bool spawn;
+   // private bool spawn;
 	// Use this for initialization
 	void Start () {
-        spawn = true;
-        coolDown = Random.Range(0.5f, 10.0f);
+        //spawn = false;
+        coolDown = Random.Range(2f, 15.0f);
         RandomPos();
         
     }
@@ -20,14 +20,15 @@ public class FollowersSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         coolDown -= Time.deltaTime;
-        if (!spawn)
-            RandomPos();
-        if (coolDown <= 0 && spawn)
+        //if (!spawn)
+        //    RandomPos();
+        if (coolDown <= 0)
         {
             Instantiate(prefabs,this.transform.position,new Quaternion());
             coolDown = 15.0f;
+            RandomPos();
+            //spawn = false;
         }
-        spawn = true;
 	}
 
     void RandomPos()
@@ -44,6 +45,7 @@ public class FollowersSpawn : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Wall" || other.tag == "Building")
-            spawn = false;
+            //spawn = false;
+            RandomPos();
     }
 }
