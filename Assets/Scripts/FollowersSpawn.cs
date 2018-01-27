@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct BuildingPos
+{
+    float bottomleft;
+    float topright;
+}
+
 public class FollowersSpawn : MonoBehaviour {
     private float coolDown;
     public GameObject prefabs;
