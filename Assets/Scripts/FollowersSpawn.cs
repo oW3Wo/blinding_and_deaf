@@ -34,7 +34,7 @@ public class FollowersSpawn : MonoBehaviour {
     void RandomPos()
     {
         this.transform.position = new Vector3(Random.Range(xmin, xmax), 0, Random.Range(zmin, zmax));
-        Debug.Log("xmin"+xmin+ "xmax"+xmax + "zmin"+zmin+ "zmax"+zmax);
+        //Debug.Log("xmin"+xmin+ "xmax"+xmax + "zmin"+zmin+ "zmax"+zmax);
     }
 
     bool ValidPos()
