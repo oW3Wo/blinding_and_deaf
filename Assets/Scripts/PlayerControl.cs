@@ -3,19 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-    private Vector3 screenPos;
+    float xspeed, zspeed;
 	// Use this for initialization
 	void Start () {
-        screenPos = new Vector3();
+        xspeed = 0;
+        zspeed = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.W))
+        
+        this.transform.position = new Vector3(this.transform.position.x + xspeed * Time.deltaTime,
+            this.transform.position.y, this.transform.position.z + zspeed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            screenPos = Camera.main.WorldToScreenPoint(this.transform.position);
-            screenPos = new Vector3(screenPos.x, screenPos.y + 0.1f, screenPos.z);
-            this.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x,screenPos.y,1.0f));
+            xspeed = 1f;
         }
-	}
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            xspeed = 0f;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            xspeed = -1f;
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            xspeed = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            zspeed = 1f;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            zspeed = 0f;
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            zspeed = 0f;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            zspeed = -1f;
+        }
+    }
 }
