@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a2e4f3eb624ee6442858946e8cf0951c
-timeCreated: 1517064931
+guid: 681054db528e52e4fb37443a73f751e2
+timeCreated: 1517070076
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -10,21 +10,13 @@ ModelImporter:
     100004: Character01_Body
     100006: Character01_Head
     100008: //RootNode
-    100010: Controller_body
-    100012: Controller_head
-    100014: ikHandle1
-    100016: joint3
-    100018: pCube2
+    100010: pCube2
     400000: Body_01
     400002: Body_02
     400004: Character01_Body
     400006: Character01_Head
     400008: //RootNode
-    400010: Controller_body
-    400012: Controller_head
-    400014: ikHandle1
-    400016: joint3
-    400018: pCube2
+    400010: pCube2
     2300000: Character01_Head
     3300000: Character01_Head
     4300000: Character01_Head

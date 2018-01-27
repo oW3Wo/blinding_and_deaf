@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFollowers : MonoBehaviour {
+public class PlayerFollowers:MonoBehaviour {
 
-    private int playerfollowerQuan;
-	// Use this for initialization
-	private void Start ()
+    public int playerfollowerQuan = 0;
+
+    private void Start()
     {
-        playerfollowerQuan = 0;
-	}
-	
+        
+    }
+
 }

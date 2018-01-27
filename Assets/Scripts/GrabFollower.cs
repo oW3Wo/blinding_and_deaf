@@ -16,7 +16,6 @@ public class GrabFollower : MonoBehaviour
     void Start()
     {
         player1 = FindObjectsOfType<PlayerControl>()[1].transform;
-
         player2 = FindObjectsOfType<PlayerControl>()[0].transform;
     }
 
@@ -27,11 +26,13 @@ public class GrabFollower : MonoBehaviour
         if (grab1)
         {
             Grab1(player1.transform.position);
+            player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
         }
 
         if (grab2)
         {
             Grab2(player2.transform.position);
+            player2.GetComponent<PlayerFollowers>().playerfollowerQuan++;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !grab2)
