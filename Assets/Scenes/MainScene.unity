@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 20
   build: 2
 --- !u!114 &12902650
 MonoBehaviour:
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &317871243
 MonoBehaviour:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &340523465
 MonoBehaviour:
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 15
   build: 2
 --- !u!114 &363124402
 MonoBehaviour:
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 20
   build: 2
 --- !u!114 &400975258
 MonoBehaviour:
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 15
   build: 2
 --- !u!114 &504734397
 MonoBehaviour:
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 35
   build: 2
 --- !u!114 &554479514
 MonoBehaviour:
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &567343578
 MonoBehaviour:
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 5
   build: 2
 --- !u!114 &578115656
 MonoBehaviour:
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &803711098
 MonoBehaviour:
@@ -3172,7 +3172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 35
   build: 2
 --- !u!114 &1146206093
 MonoBehaviour:
@@ -3329,7 +3329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 30
   build: 2
 --- !u!114 &1156642721
 MonoBehaviour:
@@ -4273,7 +4273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &1554529127
 MonoBehaviour:
@@ -4417,7 +4417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 30
   build: 2
 --- !u!114 &1581415486
 MonoBehaviour:
@@ -4561,7 +4561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 5
   build: 2
 --- !u!114 &1650435703
 MonoBehaviour:
@@ -4705,6 +4705,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -4770,7 +4784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redfollower: 0
   greenfollower: 0
-  followerQuan: 0
+  followerQuan: 10
   build: 2
 --- !u!114 &1864057404
 MonoBehaviour:
