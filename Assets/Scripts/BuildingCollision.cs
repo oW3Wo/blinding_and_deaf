@@ -53,6 +53,7 @@ public class BuildingCollision : MonoBehaviour
             if (collision.transform.tag == "Player1")
             {
                 this.GetComponent<BuildingFollowers>().build = Static.BuildBl.player1;
+                this.GetComponent<BuildingSpawn>().cooldown = 10.0f;
             }
         }
         if (this.GetComponent<BuildingFollowers>().followerQuan <= this.GetComponent<BuildingFollowers>().greenfollower)
@@ -60,6 +61,7 @@ public class BuildingCollision : MonoBehaviour
             if (collision.transform.tag == "Player2")
             {
                 this.GetComponent<BuildingFollowers>().build = Static.BuildBl.player2;
+                this.GetComponent<BuildingSpawn>().cooldown = 10.0f;
             }
         }
 
