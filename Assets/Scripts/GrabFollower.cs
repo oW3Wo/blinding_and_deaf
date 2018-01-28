@@ -7,11 +7,11 @@ public class GrabFollower : MonoBehaviour
     private GameObject player1, player2;
     private bool grab1 = false, grab2 = false, enc = false;
 
-    private Vector3 startMarker, endMarker;
+    private Vector3 startMarker, endMarker = new Vector3(1000, 1000, 1000);
     public float speed = 1.0F;
     private float startTime;
     private float journeyLength;
-    
+
 
     // Use this for initialization
     void Start()
@@ -28,35 +28,39 @@ public class GrabFollower : MonoBehaviour
         if (grab1)
         {
             Grab1(player1.transform.position);
-            player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
+            Debug.Log(122);
+            //player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
             this.GetComponent<FollowerProperties>().belong = Static.Belong.player1;
+            grab1 = false;
         }
 
         if (grab2)
         {
             Grab2(player2.transform.position);
+            //player2.GetComponent<PlayerFollowers>().playerfollowerQuan++;
             this.GetComponent<FollowerProperties>().belong = Static.Belong.player2;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !grab2)
+        //if (Input.GetKeyDown(KeyCode.Space) && !grab2)
+        if (!grab2 && !grab1)
         {
-            if (Vector3.Distance(this.transform.position, player1.transform.position) <= 1)
+            if (Vector3.Distance(this.transform.position, player1.transform.position) <= 0.5)
             {
-                player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
+                //player1.GetComponent<PlayerFollowers>().playerfollowerQuan++;
                 grab1 = true;
             }
-            Debug.Log("Grab1");
+            //Debug.Log("Grab1");
         }
 
-
-        if (Input.GetKeyDown(KeyCode.M) && !grab1)
+        if (!grab1 && !grab2)
+        //if (Input.GetKeyDown(KeyCode.M) && !grab1)
         {
-            if (Vector3.Distance(this.transform.position, player2.transform.position) <= 1)
+            if (Vector3.Distance(this.transform.position, player2.transform.position) <= 0.5)
             {
                 grab2 = true;
-                player2.GetComponent<PlayerFollowers>().playerfollowerQuan++;
+                //player2.GetComponent<PlayerFollowers>().playerfollowerQuan++;
             }
-            Debug.Log("Grab2");
+            //Debug.Log("Grab2");
         }
 
         if (this.transform.position == endMarker)
@@ -72,7 +76,7 @@ public class GrabFollower : MonoBehaviour
         {
             this.transform.SetParent(player1.transform);
             startMarker = this.transform.position;
-            endMarker = end + new Vector3(Random.Range(-0.4f, 0.4f), this.transform.position.y, Random.Range(-0.4f, 0.4f));
+            endMarker = end + new Vector3(Random.Range(-0.2f, 0.2f), this.transform.position.y, Random.Range(-0.2f, 0.2f));
             startTime = Time.time;
             journeyLength = Vector3.Distance(startMarker, endMarker);
             enc = true;
@@ -89,7 +93,7 @@ public class GrabFollower : MonoBehaviour
         {
             this.transform.SetParent(player2.transform);
             startMarker = this.transform.position;
-            endMarker = end + new Vector3(Random.Range(-0.4f, 0.4f), this.transform.position.y, Random.Range(-0.4f, 0.4f));
+            endMarker = end + new Vector3(Random.Range(-0.2f, 0.2f), this.transform.position.y, Random.Range(-0.2f, 0.2f));
             journeyLength = Vector3.Distance(startMarker, endMarker);
             startTime = Time.time;
             enc = true;

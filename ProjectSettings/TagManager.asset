@@ -8,6 +8,8 @@ TagManager:
   - Player2
   - Wall
   - Building
+  - P1A
+  - P2A
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
         //this.transform.position = new Vector3(this.transform.position.x + xspeed * Time.deltaTime,
         //    this.transform.position.y, this.transform.position.z + zspeed * Time.deltaTime);
         this.GetComponent<Rigidbody>().velocity = new Vector3(xspeed, 0, zspeed);
+        this.GetComponent<PlayerFollowers>().playerfollowerQuan = this.GetComponentsInChildren<FollowerProperties>().Length;
         if (this.name == "Player1")
         {
             if (Input.GetKey(KeyCode.D) && !xp2)

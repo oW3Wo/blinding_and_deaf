@@ -17,41 +17,47 @@ public class BuildingCollision : MonoBehaviour
 
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if (collision.transform.name == "Player1" && p1.GetComponent<PlayerFollowers>().playerfollowerQuan >= 1
-            && this.GetComponent<BuildingFollowers>().build == Static.BuildBl.none)
+        if (collision.transform.tag == "Player1" && p1.GetComponent<PlayerFollowers>().playerfollowerQuan >= 1
+            && this.GetComponent<BuildingFollowers>().build != Static.BuildBl.player1)
         {
-            this.GetComponent<BuildingFollowers>().redfollower++;
+       
+                this.GetComponent<BuildingFollowers>().redfollower++;
             if (this.GetComponent<BuildingFollowers>().greenfollower > 0)
+            {
                 this.GetComponent<BuildingFollowers>().greenfollower--;
-            p1.GetComponent<PlayerFollowers>().playerfollowerQuan--;
-            if (p1.GetComponentsInChildren<Transform>()[1].gameObject)
-                Destroy(p1.GetComponentsInChildren<Transform>()[1].gameObject);
+                //Debug.Log(1);
+            }
+            //p1.GetComponent<PlayerFollowers>().playerfollowerQuan--;
+            if (p1.GetComponentsInChildren<FollowerProperties>().Length >= 1)
+                if (p1.GetComponentsInChildren<FollowerProperties>()[0].gameObject)
+                    Destroy(p1.GetComponentsInChildren<FollowerProperties>()[0].gameObject);
         }
 
-        if (collision.transform.name == "Player2" && p2.GetComponent<PlayerFollowers>().playerfollowerQuan >= 1
-            && this.GetComponent<BuildingFollowers>().build == Static.BuildBl.none)
+        if (collision.transform.tag == "Player2" && p2.GetComponent<PlayerFollowers>().playerfollowerQuan >= 1
+            && this.GetComponent<BuildingFollowers>().build != Static.BuildBl.player2)
         {
             this.GetComponent<BuildingFollowers>().greenfollower++;
             if (this.GetComponent<BuildingFollowers>().redfollower > 0)
                 this.GetComponent<BuildingFollowers>().redfollower--;
-            p2.GetComponent<PlayerFollowers>().playerfollowerQuan--;
-            if (p1.GetComponentsInChildren<Transform>()[1].gameObject)
-                Destroy(p2.GetComponentsInChildren<Transform>()[1].gameObject);
+            //p2.GetComponent<PlayerFollowers>().playerfollowerQuan--;
+            if (p2.GetComponentsInChildren<FollowerProperties>().Length >= 2)
+                if (p2.GetComponentsInChildren<FollowerProperties>()[0].gameObject)
+                    Destroy(p2.GetComponentsInChildren<FollowerProperties>()[0].gameObject);
         }
 
-        if (this.GetComponent<BuildingFollowers>().followerQuan <= this.GetComponent<BuildingFollowers>().redfollower++)
+        if (this.GetComponent<BuildingFollowers>().followerQuan <= this.GetComponent<BuildingFollowers>().redfollower)
 
         {
-            if (collision.transform.name == "Player1")
+            if (collision.transform.tag == "Player1")
             {
                 this.GetComponent<BuildingFollowers>().build = Static.BuildBl.player1;
             }
         }
-        if (this.GetComponent<BuildingFollowers>().followerQuan <= this.GetComponent<BuildingFollowers>().greenfollower++)
+        if (this.GetComponent<BuildingFollowers>().followerQuan <= this.GetComponent<BuildingFollowers>().greenfollower)
         {
-            if (collision.transform.name == "Player2")
+            if (collision.transform.tag == "Player2")
             {
                 this.GetComponent<BuildingFollowers>().build = Static.BuildBl.player2;
             }
